@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_doctor_user,Doctor User,model_doctor_module,base.group_user,1,1,1,1
+
+access_hospital_department_manager,Access Hospital Departments Manager,model_department_module,base.group_user,1,1,1,1
+
+access_hospital_patient_manager,Access Hospital Patients Manager,model_patient_module,base.group_user,1,1,1,1
+
+access_hospital_treatment_manager,Access Hospital Treatment Manager,model_treatment_module,base.group_user,1,1,1,1
+
+access_hospital_appointment_manager,Access Hospital Appointment Manager,model_appointment_module,base.group_user,1,1,1,1
+
+access_menu_appointment_wizard_manager,Access Hospital Appointment Wizard,model_appointment_wizard,base.group_user,1,1,1,1

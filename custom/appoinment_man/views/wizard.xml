@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="sequence_appointment_code" model="ir.sequence">
+            <field name="name">Appointment Code</field>
+            <field name="code">appointment.wizard.code</field>
+            <field name="prefix">APPT-</field>
+            <field name="padding">5</field>
+        </record>
+
+        <record id="view_appointment_wizard" model="ir.ui.view">
+            <field name="name">appointment.wizard.form</field>
+            <field name="model">appointment.wizard</field>
+            <field name="arch" type="xml">
+                 <form string="Create Appointment Wizard">
+                    <group>
+                        <field name="patient_id" required="1"/>
+                        <field name="doctor_ids" widget="many2many_tags"/>
+                    </group>
+                        <footer>
+                            <button name="button_create_appointment" string="Create Appointment" type="object"
+                                class="btn-primary"/>
+                            <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_appointment_wizard" model="ir.actions.act_window">
+            <field name="name">Create Appointment</field>
+            <field name="res_model">appointment.wizard</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_appointment_wizard"/>
+            <field name="target">new</field>
+        </record>
+            <menuitem id="menu_hospital" name="Hospital"/>
+           <!-- <menuitem id="menu_appointment" name="Appointments" parent="menu_hospital" action="action_appointment_module"/> -->
+            <menuitem id="menu_wizard" name="Create Appointment" parent="menu_hospital" action="action_appointment_wizard"/>
+    </data>
+</odoo>
